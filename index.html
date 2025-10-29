@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aman | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="header-content">
+      <h1 class="logo"><span>A</span>man.</h1>
+      <div class="menu-btn">☰</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ===== HOME ===== -->
+  <section id="home" class="header-text">
+    <p class="subtitle">Web Developer (in progress)</p>
+    <h2>Hi, I'm <span>Aman</span></h2>
+    <h3>I'm learning frontend, backend web and AI technologies.</h3>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <h1>About Me</h1>
+    <p>
+      Hello, I’m Aman Vaghela. I’m a 3rd year (5th sem) IT student at GTU University.
+      I’m learning full-stack web development. Now I started with frontend and I’m also
+      learning about coding, design, and web technologies.
+    </p>
+
+    <div class="tab-titles">
+      <p class="tab-linkes active-link" onclick="opentab('skills')">Skills</p>
+      <p class="tab-linkes" onclick="opentab('education')">Education</p>
+    </div>
+
+    <div class="tab-contents active-tab" id="skills">
+      <ul>
+        <li><span>Word/Excel</span></li>
+        <li><span>MySQL (Basic)</span></li>
+        <li><span>HTML, CSS</span></li>
+        <li><span>JavaScript</span></li>
+        <li><span>Python</span></li>
+        <li><span>C/C++</span></li>
+      </ul>
+    </div>
+
+    <div class="tab-contents" id="education">
+      <ul>
+        <li><span>M.Sc IT Integrated (Current)</span><br />GTU University From Ahmedabad<br />SSASIT College</li>
+        <li><span>HSC - March 2023</span><br />M.N.J Patel Madhyamik School<br />Percentage - 68.16%</li>
+        <li><span>SSC - March 2021</span><br />M.N.J Patel Madhyamik School<br />Percentage - 64.16%</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <h1>Projects</h1>
+    <div class="project-box">
+      <div class="project">
+        <h3><a href="https://amanvvaghela.github.io/My-Protfolio/" target="_blank">Portfolio Website</a></h3>
+        <p>My personal portfolio built using HTML, CSS & JavaScript.</p>
+      </div>
+      <div class="project">
+        <h3><a href="https://amanvvaghela.github.io/Search-bar-button-project/" target="_blank">Search Bar Project</a></h3>
+        <p>A simple search bar button.</p>
+      </div>
+      <div class="project">
+        <h3><a href="https://amanvvaghela.github.io/Regestration-project/" target="_blank">Registration Project</a></h3>
+        <p>Registration and login form with validation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact">
+    <h1>Contact Me</h1>
+    <div class="contact-box">
+      <form id="contact-form">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Send Message</button>
+        <p id="msg-output"></p>
+      </form>
+    </div>
+
+    <div class="social-links">
+      <a href="mailto:amanvaghela@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="Email">
+      </a>
+    </div>
+
+    <div class="resume-box">
+      <a href="My resume main.pdf" download>📄 Download Resume</a>
+    </div>
+  </section>
+
+  <!-- ===== SCRIPT ===== -->
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    menuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    const tablinkes = document.getElementsByClassName("tab-linkes");
+    const tabcontents = document.getElementsByClassName("tab-contents");
+
+    function opentab(tabname) {
+      for (let tablinke of tablinkes) {
+        tablinke.classList.remove("active-link");
+      }
+      for (let tabcontent of tabcontents) {
+        tabcontent.classList.remove("active-tab");
+      }
+      event.currentTarget.classList.add("active-link");
+      document.getElementById(tabname).classList.add("active-tab");
+    }
+  </script>
+</body>
+</html>
